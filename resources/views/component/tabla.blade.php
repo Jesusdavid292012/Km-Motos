@@ -1,4 +1,5 @@
-  <table class="table" id="tabla">
+ <div id="tabla">
+   <table class="table" >
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
@@ -31,7 +32,8 @@
     </tbody>
   </table>
 
-  <nav aria-label="..." class="float-right">
-     {{--  {{$products->links()}} --}}
-  </nav>
 
+  <nav aria-label="..." class="float-right">
+      {{$products->links()}}
+  </nav>
+</div>

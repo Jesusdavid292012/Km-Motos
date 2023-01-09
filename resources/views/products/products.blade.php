@@ -1,11 +1,11 @@
 @extends('welcome')
-
                 
 @section('title', 'Productos')
 
 @section('content')
     
 <div class="table-responsive" >
+  <h1 class="mb-4 font-italic">Km Motos</h1>
   <nav class="navbar navbar-light bg-light">
 
     <a class="btn btn-primary mb-2 float-left" href="{{url('home')}}" role="button">Home</a>
@@ -19,15 +19,6 @@
 
   @include('component.tabla')
 
-</div>
-  <nav aria-label="..." class="float-right">
-     {{--  {{$products->links()}} --}}
-  </nav>
-
-</div>
-
-<div id="#resultado">
-  <?php /* print_r($products) */ ?>
 </div>
 
 @endsection

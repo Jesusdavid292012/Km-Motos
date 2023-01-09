@@ -20,9 +20,9 @@ class ProductsController extends Controller
     public function index()
     {
         
-        $results=Products::paginate(8);
+        $results=Products::paginate(7);
         $this->products= $results;
-        
+
         return view('products.products',['products'=>$this->products],);
         
     }
@@ -48,7 +48,7 @@ class ProductsController extends Controller
         if(isset($_POST['b'])){
          $buscar = $_POST['b'];
          $products=Products::where('product_key','like', '%'.$buscar.'%')
-          ->orWhere('notes','like', '%'.$buscar.'%') ->get();
+          ->orWhere('notes','like', '%'.$buscar.'%')->paginate(7);
          return view('component.tabla',['products'=>$products],);
         }
     }
