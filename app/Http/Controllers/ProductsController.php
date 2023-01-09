@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
-    public $products;
     /**
      * Display a listing of the resource.
      *
@@ -20,10 +19,9 @@ class ProductsController extends Controller
     public function index()
     {
         
-        $results=Products::paginate(7);
-        $this->products= $results;
+        $products=Products::paginate(7);
 
-        return view('products.products',['products'=>$this->products],);
+        return view('products.products',['products'=>$products],);
         
     }
 
