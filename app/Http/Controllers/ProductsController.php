@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
+    public $products;
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +19,12 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products=Products::all();
-        return view('products.products',['products'=>$products],);
+        
+        $results=Products::paginate(8);
+        $this->products= $results;
+        
+        return view('products.products',['products'=>$this->products],);
+        
     }
 
     /**
@@ -40,7 +45,12 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(isset($_POST['b'])){
+         $buscar = $_POST['b'];
+         $products=Products::where('product_key','like', '%'.$buscar.'%')
+          ->orWhere('notes','like', '%'.$buscar.'%') ->get();
+         return view('component.tabla',['products'=>$products],);
+        }
     }
 
     /**

@@ -1,74 +1,33 @@
 @extends('welcome')
-{{-- @foreach($products as $pr)
-h
-@endforeach --}}
+
                 
 @section('title', 'Productos')
 
 @section('content')
     
-<a class="btn btn-primary mb-4 " href="{{url('home')}}" role="button">Home</a>
+<div class="table-responsive" >
+  <nav class="navbar navbar-light bg-light">
 
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+    <a class="btn btn-primary mb-2 float-left" href="{{url('home')}}" role="button">Home</a>
 
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+    <div class="form-inline">
+      <div class="input-group">
+        <input id="filtrar" type="text" class="form-control" placeholder="Filtrar" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+    </div>
+  </nav>
+
+  @include('component.tabla')
+
+</div>
+  <nav aria-label="..." class="float-right">
+     {{--  {{$products->links()}} --}}
+  </nav>
+
+</div>
+
+<div id="#resultado">
+  <?php /* print_r($products) */ ?>
+</div>
 
 @endsection

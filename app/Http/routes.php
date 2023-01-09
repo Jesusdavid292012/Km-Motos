@@ -18,3 +18,4 @@ Route::get('/home', function () {
 });
 
 Route::resource('/products',ProductsController::class);
+
